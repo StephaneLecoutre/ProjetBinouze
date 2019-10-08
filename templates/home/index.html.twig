@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="icon" href="{{asset('images/binouze.png')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <canvas id='bgCanvas'></canvas>
+        <h1>BIENVENUE<br>SUR<br>BINOUZE UN JOUR BINOUZE TOUJOURS</h1>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="js/index.js"></script>
+
+{% endblock %}
