@@ -7,14 +7,20 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container">
-        <canvas id='bgCanvas'></canvas>
-        <h1>BIENVENUE<br>SUR<br>BINOUZE UN JOUR BINOUZE TOUJOURS</h1>
+<section class="margin jumbotron banner jumbotron-fluid text-center">
+<h1 class="h2-responsive mb-3">B<img src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
+    <video id="video" autoplay="true" loop muted width="100%">
+        <source src="{{asset('images/beer.mp4')}}"></source>        
+    </video>
+        <div class="container main">
+        <div class="contentBox">
+            
+        </div>
     </div>
-
+    <h1 id="main"></h1>
+        
+</section>
 {% endblock %}
 
 {% block javascripts %}
-<script src="js/index.js"></script>
-
 {% endblock %}
