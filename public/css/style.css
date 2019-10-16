@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
+* {
+  cursor: url(images/binouze.cur), auto !important;
+}
 
 body{
     margin:0;
@@ -22,9 +25,7 @@ video {
 }
 
 img {
-  margin-left: -38px;
-  margin-right: -38px;
+  margin-left: -45px;
+  margin-right: -45px;
   margin-bottom: -25px;
 }
-
-/* Start http://www.cursors-4u.com */ * {cursor: url(http://cur.cursors-4u.net/food/foo-2/foo108.cur), auto !important;} /* End http://www.cursors-4u.com */
