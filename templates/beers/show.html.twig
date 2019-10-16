@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Beers{% endblock %}
+
+{% block body %}
+    <h1>Beers</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ beer.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ beer.name }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ beer.type }}</td>
+            </tr>
+            <tr>
+                <th>Brewery</th>
+                <td>{{ beer.brewery }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ beer.city }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ beer.description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ beer.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('beers_index') }}">back to list</a>
+
+    <a href="{{ path('beers_edit', {'id': beer.id}) }}">edit</a>
+
+    {{ include('beers/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Beers index{% endblock %}
+
+{% block body %}
+    <h1>Beers index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Brewery</th>
+                <th>City</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for beer in beers %}
+            <tr>
+                <td>{{ beer.id }}</td>
+                <td>{{ beer.name }}</td>
+                <td>{{ beer.type }}</td>
+                <td>{{ beer.brewery }}</td>
+                <td>{{ beer.city }}</td>
+                <td>{{ beer.description }}</td>
+                <td>{{ beer.photo }}</td>
+                <td>
+                    <a href="{{ path('beers_show', {'id': beer.id}) }}">show</a>
+                    <a href="{{ path('beers_edit', {'id': beer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('beers_new') }}">Create new</a>
+{% endblock %}
