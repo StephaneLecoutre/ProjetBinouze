@@ -27,7 +27,9 @@
                 <td>{{ beer.brewery }}</td>
                 <td>{{ beer.city }}</td>
                 <td>{{ beer.description }}</td>
-                <td>{{ beer.photo }}</td>
+                <td>
+                    <img src="{{ beer.photo }}" width="25%">
+                </td>
                 <td>
                     <a href="{{ path('beers_show', {'id': beer.id}) }}">show</a>
                     <a href="{{ path('beers_edit', {'id': beer.id}) }}">edit</a>
