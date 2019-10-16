@@ -2,11 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Twig\Environment;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+    public function __construct(Environment $twig)
+    {
+        $this->twig=$twig;
+    }
+    
     /**
      * @Route("/", name="home")
      */
