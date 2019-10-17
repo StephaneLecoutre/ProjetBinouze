@@ -10,10 +10,24 @@
         {% endblock %}
     </head>
     <body>
-    <div class="container">
         {% block body %}        
         {% endblock %}
-    </div>    
+        <footer class="pageFooter">
+        
+            <div class="col-md-4 px-5">
+                <a href="#">Plan du site</a>
+            </div>
+
+            <div class="col-md-4 px-5">
+                <a href="#">Mentions légales</a>
+            </div>
+
+            <div class="col-md-4 px-5">
+                <a href="#">Contactez-nous</a>
+            </div>      
+
+        </footer>
+        
         {% block javascripts %}                   
         {% endblock %}
     </body>

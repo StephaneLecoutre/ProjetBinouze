@@ -9,6 +9,8 @@ body{
     padding:0;
 }
 
+/* Bannière */
+
 h1 {
   text-align: center;
   color: black;
@@ -18,14 +20,39 @@ h1 {
 }
 
 video {
+  display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: -1;
 }
 
-img {
+.bottle {
   margin-left: -45px;
   margin-right: -45px;
   margin-bottom: -25px;
+}
+
+/* Capsule */
+.capsule {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20%;
+}
+
+
+/* Footer */
+
+.pageFooter {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  height: 4em;
+  padding-top: 25px;
+}
+
+.pageFooter a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
 }
