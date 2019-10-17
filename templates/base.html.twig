@@ -3,18 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
+            <!--lien vers le CSS de la navbar -->        
+            <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
             <!--thème boostsrap-->
+        {% block stylesheets %}
             <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
-
         {% endblock %}
     </head>
     <body>
-    <div class="container">
+
+    <nav class="top-right open">
+    
+	<a class="disc l1">
+		<div>Culture</div>
+	</a>
+	<a class="disc l2">
+		<div>Quizz</div>
+	</a>
+	<a class="disc l3" href="{{ path('recipes_index')}}" >
+		<div>Recettes</div>
+	</a>
+	<a class="disc l4" href="{{ path('beers_index')}}">
+		<div>Nos bières</div>
+	</a>
+	<a class="disc l5 toggle">
+		Menu
+	</a>
+</nav>
+   <div class="container">      
         {% block body %}        
         {% endblock %}
-    </div>    
-        {% block javascripts %}                   
+   </div>
+     <script src="{{ asset('js/navbar.js')}}"></script> 
+        {% block javascripts %} 
+                 
         {% endblock %}
     </body>
 </html>
