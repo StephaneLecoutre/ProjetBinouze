@@ -35,6 +35,13 @@ h1 {
     top: 75%;
 }
 
+aside{
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__480.jpg");
+    width: 15vw;
+    height: 100vh;
+    position: relative;
+}
+
 .card .menu-content {
     margin: 0;
     padding: 0;

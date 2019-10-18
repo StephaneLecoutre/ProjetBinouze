@@ -11,11 +11,37 @@
         <h1 class="text-center pageTitle">Nos bières régionales primées</h1>
     </div>
 
+    <div class="jumbotron">
+<div class="row">
+        <div class="container col-3">
+            <h3>Recherchez votre bière</h3>
+            {{ form_start(form) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(form.name) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.type) }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(form.brewery) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.city) }}
+                </div>
+            </div>
+            <div class="col">
+                <button class="btn btn-info">Rechercher</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
 
-    <div class="container">
 
+        <div class="container col-9">
+            <div class="row">
 
-        <div class="row">
             {% for beer in beers %}
 
                 {% if beer.id is odd %}
@@ -73,8 +99,16 @@
                 {% endif %}
 
             {% endfor %}
-        </div>
 
-        <a href="{{ path('beers_new') }}">Create new</a>
+
+            </div>
+
+    <div class="pagination d-flex justify-content-center mt-5">
+        {{ knp_pagination_render(beers) }}
+    </div>
+
+    <a href="{{ path('beers_new') }}">Create new</a>
+        </div>
+</div>
     </div>
 {% endblock %}
