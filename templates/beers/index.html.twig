@@ -2,46 +2,79 @@
 
 {% block title %}Beers index{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/beers.css') }}">
+{% endblock %}
+
 {% block body %}
-    <h1>Beers index</h1>
+    <div class="section1">
+        <h1 class="text-center pageTitle">Nos bières régionales primées</h1>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Brewery</th>
-                <th>City</th>
-                <th>Description</th>
-                <th>Photo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for beer in beers %}
-            <tr>
-                <td>{{ beer.id }}</td>
-                <td>{{ beer.name }}</td>
-                <td>{{ beer.type }}</td>
-                <td>{{ beer.brewery }}</td>
-                <td>{{ beer.city }}</td>
-                <td>{{ beer.description }}</td>
-                <td>
-                    <img src="{{ beer.photo }}" width="25%">
-                </td>
-                <td>
-                    <a href="{{ path('beers_show', {'id': beer.id}) }}">show</a>
-                    <a href="{{ path('beers_edit', {'id': beer.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('beers_new') }}">Create new</a>
+    <div class="container">
+
+
+        <div class="row">
+            {% for beer in beers %}
+
+                {% if beer.id is odd %}
+
+                    <div class="col-4">
+                        <div class="example-2 card mt-5">
+                            <div class="wrapper background1">
+                                <div class="header">
+                                    <div class="date">
+                                        <span class="day">{{ beer.city|upper }}</span>
+                                    </div>
+                                    <ul class="menu-content">
+                                        <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="data">
+                                    <div class="content">
+                                        <span class="author">{{ beer.type }}</span>
+                                        <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
+                                        <p class="text">{{ beer.description }}</p>
+                                        <a href="#" class="button">En savoir plus</a>
+                                        <img src="{{ beer.photo }}" width="150px" height="300px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% else %}
+
+                    <div class="col-4">
+                        <div class="example-2 card mt-5">
+                            <div class="wrapper background2">
+                                <div class="header">
+                                    <div class="date">
+                                        <span class="day">{{ beer.city|upper }}</span>
+                                    </div>
+                                    <ul class="menu-content">
+                                        <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="data">
+                                    <div class="content">
+                                        <span class="author">{{ beer.type }}</span>
+                                        <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
+                                        <p class="text">{{ beer.description }}</p>
+                                        <a href="#" class="button">En savoir plus</a>
+                                        <img src="{{ beer.photo }}" width="150px" height="300px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endif %}
+
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('beers_new') }}">Create new</a>
+    </div>
 {% endblock %}
