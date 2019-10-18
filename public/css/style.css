@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
 
-* {
-  cursor: url(images/binouze.cur), auto !important;
-}
-
 body{
     margin:0;
     padding:0;
@@ -11,12 +7,12 @@ body{
 
 /* Bannière */
 
-h1 {
+.title h1 {
   text-align: center;
   color: black;
   font-family: 'Indie Flower', cursive;
   font-size: 10rem;
-  margin-top: 15%;
+  margin-top: 50px;
 }
 
 video {
@@ -33,11 +29,16 @@ video {
   margin-bottom: -25px;
 }
 
+
+
 /* Capsule */
 .capsule {
   display: flex;
   justify-content: space-around;
-  margin-top: 230px;
+}
+
+.capsule img {
+  width: 250px;
 }
 
 
@@ -46,9 +47,7 @@ video {
 .pageFooter {
   display: flex;
   justify-content: space-evenly;
-  background-color: black;
-  height: 4em;
-  padding-top: 25px;
+  background: linear-gradient(rgb(180, 174, 174) 25%, black 75%);
 }
 
 .pageFooter a {

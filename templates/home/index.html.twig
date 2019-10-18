@@ -7,9 +7,19 @@
 {% endblock %}
 
 {% block body %}
-<section class="margin jumbotron jumbotron-fluid text-center banner">
-<h1 class="h2-responsive mb-3">B<img class="bottle" src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
-    <video id="video" autoplay="true" loop muted width="100%">
+<section class="margin jumbotron jumbotron-fluid text-center col-12 banner">
+    <div class="container capsule">
+        <a href="#"><img src="{{asset('images/nosBieres.png')}}"></a>
+        <a href="#"><img src="{{asset('images/recettes.png')}}"></a>
+        <a href="#"><img src="{{asset('images/quizz.png')}}"></a>
+        <a href="#"><img src="{{asset('images/infos.png')}}"></a>       
+    </div>
+
+    <div class="title">
+        <h1>B<img class="bottle" src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
+    </div>
+    
+    <video id="video" autoplay="true" loop muted width="100%"class="col-12">
         <source src="{{asset('images/beer.mp4')}}"></source>        
     </video>
     
@@ -17,12 +27,7 @@
        <source src="{{asset('images/1391.mp3')}}" type"audio/mpeg"></source>
        <source src="{{asset('images/1391.ogg')}}" type"audio/ogg"></source>
     </audio>
-    <div class="container capsule">
-    <img src="{{asset('images/nosBieres.png')}}">
-    <img src="{{asset('images/recettes.png')}}">
-    <img src="{{asset('images/quizz.png')}}">
-    <img src="{{asset('images/infos.png')}}">       
-</div>
+
 </section>
 
 
