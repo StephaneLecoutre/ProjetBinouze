@@ -3,8 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Beers;
+use App\Entity\BeerSearch;
+use App\Form\BeerSearchType;
 use App\Form\BeersType;
 use App\Repository\BeersRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,17 +19,43 @@ use Symfony\Component\Routing\Annotation\Route;
 class BeersController extends AbstractController
 {
     /**
-     * @Route("/", name="beers_index", methods={"GET"})
+     * @var BeersRepository
      */
-    public function index(BeersRepository $beersRepository): Response
+    private $beersRepository;
+
+    public function __construct(BeersRepository $beersRepository)
     {
+        $this->beersRepository = $beersRepository;
+    }
+
+    /**
+     * @Route("/", name="beers_index", methods={"GET"})
+     * @param Request $request
+     * @param PaginatorInterface $paginator
+     * @return Response
+     */
+    public function index(Request $request, PaginatorInterface $paginator): Response
+    {
+        $search = new BeerSearch();
+        $form = $this->createForm(BeerSearchType::class , $search);
+        $form -> handleRequest($request);
+
+        $beers = $paginator->paginate(
+            $this->beersRepository->findAllVisibleQuery($search),
+            $request->query->getInt('page',1),
+            6
+        );
+
         return $this->render('beers/index.html.twig', [
-            'beers' => $beersRepository->findAll(),
+            'beers' => $beers,
+            'form' => $form->createView(),
         ]);
     }
 
     /**
      * @Route("/new", name="beers_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +79,8 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}", name="beers_show", methods={"GET"})
+     * @param Beers $beer
+     * @return Response
      */
     public function show(Beers $beer): Response
     {
@@ -60,6 +91,9 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="beers_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Beers $beer
+     * @return Response
      */
     public function edit(Request $request, Beers $beer): Response
     {
@@ -80,6 +114,9 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}", name="beers_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Beers $beer
+     * @return Response
      */
     public function delete(Request $request, Beers $beer): Response
     {

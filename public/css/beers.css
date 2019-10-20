@@ -35,6 +35,13 @@ h1 {
     top: 75%;
 }
 
+aside{
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__480.jpg");
+    width: 15vw;
+    height: 100vh;
+    position: relative;
+}
+
 .card .menu-content {
     margin: 0;
     padding: 0;
@@ -64,7 +71,7 @@ h1 {
 }
 .card .wrapper {
     background-color: #fff;
-    min-height: 300px;
+    min-height: 350px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
@@ -147,8 +154,8 @@ h1 {
 }
 .example-2 .data {
     color: #fff;
-    -webkit-transform: translateY(calc(100px + 13em));
-    transform: translateY(calc(100px + 13em));
+    -webkit-transform: translateY(calc(100px + 15em));
+    transform: translateY(calc(100px + 15em));
 }
 .example-2 .title a {
     color: #fff;
@@ -161,7 +168,9 @@ h1 {
     font-size: 12px;
     color: #fff;
     line-height: 1;
-    position: relative;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
     font-weight: 700;
 }
 .example-2 .button::after {
