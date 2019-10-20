@@ -62,10 +62,10 @@
                                         <span class="author">{{ beer.type }}</span>
                                         <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
                                         <p class="text">{{ beer.description }}</p>
-                                        <a href="#" class="button">En savoir plus</a>
-                                        <img src="{{ beer.photo }}" width="150px" height="300px">
+                                        <img src="{{ beer.photo }}" width="150px">
                                     </div>
                                 </div>
+                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -88,10 +88,11 @@
                                         <span class="author">{{ beer.type }}</span>
                                         <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
                                         <p class="text">{{ beer.description }}</p>
-                                        <a href="#" class="button">En savoir plus</a>
-                                        <img src="{{ beer.photo }}" width="150px" height="300px">
+                                        <img src="{{ beer.photo }}" width="150px">
                                     </div>
                                 </div>
+
+                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
                             </div>
                         </div>
                     </div>

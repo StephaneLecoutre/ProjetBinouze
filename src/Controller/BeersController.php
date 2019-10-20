@@ -43,7 +43,7 @@ class BeersController extends AbstractController
         $beers = $paginator->paginate(
             $this->beersRepository->findAllVisibleQuery($search),
             $request->query->getInt('page',1),
-            8
+            6
         );
 
         return $this->render('beers/index.html.twig', [
@@ -54,6 +54,8 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/new", name="beers_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -77,6 +79,8 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}", name="beers_show", methods={"GET"})
+     * @param Beers $beer
+     * @return Response
      */
     public function show(Beers $beer): Response
     {
@@ -87,6 +91,9 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="beers_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Beers $beer
+     * @return Response
      */
     public function edit(Request $request, Beers $beer): Response
     {
@@ -107,6 +114,9 @@ class BeersController extends AbstractController
 
     /**
      * @Route("/{id}", name="beers_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Beers $beer
+     * @return Response
      */
     public function delete(Request $request, Beers $beer): Response
     {
