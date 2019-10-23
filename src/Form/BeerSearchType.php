@@ -20,6 +20,7 @@ class BeerSearchType extends AbstractType
                     'bières blanches' => 'bières blanches',
                     'bières blondes' => 'bières blondes',
                     'bières ambrées' => 'bières ambrées',
+                    'bières brunes' => 'bières brunes',
                 ]
             ])
             ->add('brewery')

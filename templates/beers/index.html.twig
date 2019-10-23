@@ -7,95 +7,141 @@
 {% endblock %}
 
 {% block body %}
+
+    {% block javascripts %}
+        <script src= "https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+        <script>
+            $(".flipcard").flip({
+                axis: 'y',
+                trigger: 'click'
+            });
+        </script>
+    {% endblock %}
+
     <div class="section1">
         <h1 class="text-center pageTitle">Nos bières régionales primées</h1>
     </div>
 
     <div class="jumbotron">
-<div class="row">
-        <div class="container col-3">
-            <h3>Recherchez votre bière</h3>
-            {{ form_start(form) }}
-            <div class="form-row">
-                <div class="col">
-                    {{ form_row(form.name) }}
+        <div class="row">
+                <div class="container col-3">
+                    <h3>Recherchez votre bière</h3>
+                    {{ form_start(form) }}
+                    <div class="form-row">
+                        <div class="col">
+                            {{ form_row(form.name) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(form.type) }}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            {{ form_row(form.brewery) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(form.city) }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info">Rechercher</button>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
-                <div class="col">
-                    {{ form_row(form.type) }}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    {{ form_row(form.brewery) }}
-                </div>
-                <div class="col">
-                    {{ form_row(form.city) }}
-                </div>
-            </div>
-            <div class="col">
-                <button class="btn btn-info">Rechercher</button>
-            </div>
-            {{ form_end(form) }}
-        </div>
 
 
-        <div class="container col-9">
-            <div class="row">
+                <div class="container col-9">
+                    <div class="row">
 
             {% for beer in beers %}
 
                 {% if beer.id is odd %}
 
-                    <div class="col-4">
-                        <div class="example-2 card mt-5">
-                            <div class="wrapper background1">
-                                <div class="header">
-                                    <div class="date">
-                                        <span class="day">{{ beer.city|upper }}</span>
+                                <div class="col-4">
+                                        <div class="example-2 card mt-5">
+
+                                            <div class="flipcard">
+                                                <div class="front">
+                                                    <div class="wrapper background1">
+                                                        <div class="header">
+                                                            <div class="date">
+                                                                <span class="day">{{ beer.city|upper }}</span>
+                                                            </div>
+                                                            <ul class="menu-content">
+                                                                <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="data">
+                                                            <div class="content">
+                                                                <span class="author">{{ beer.type }}</span>
+                                                                <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
+                                                                <p class="text">{{ beer.description }}</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="back">
+                                                    <div class="card backcard text-white bg-success mb-3" style="max-width: 20rem;">
+                                                        <div class="card-header"><h4 class="card-title">{{ beer.name }}</h4></div>
+                                                        <div class="card-body">
+                                                            <div class="img-container d-flex justify-content-center">
+                                                                <img src="{{ beer.photo }}" width="100%">
+                                                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
-                                    <ul class="menu-content">
-                                        <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
-                                    </ul>
                                 </div>
-                                <div class="data">
-                                    <div class="content">
-                                        <span class="author">{{ beer.type }}</span>
-                                        <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
-                                        <p class="text">{{ beer.description }}</p>
-                                        <img src="{{ beer.photo }}" width="150px">
-                                    </div>
-                                </div>
-                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
+
 
                 {% else %}
 
                     <div class="col-4">
                         <div class="example-2 card mt-5">
-                            <div class="wrapper background2">
-                                <div class="header">
-                                    <div class="date">
-                                        <span class="day">{{ beer.city|upper }}</span>
-                                    </div>
-                                    <ul class="menu-content">
-                                        <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="data">
-                                    <div class="content">
-                                        <span class="author">{{ beer.type }}</span>
-                                        <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
-                                        <p class="text">{{ beer.description }}</p>
-                                        <img src="{{ beer.photo }}" width="150px">
+
+                            <div class="flipcard">
+                                <div class="front">
+                                    <div class="wrapper background2">
+                                        <div class="header">
+                                            <div class="date">
+                                                <span class="day">{{ beer.city|upper }}</span>
+                                            </div>
+                                            <ul class="menu-content">
+                                                <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="data">
+                                            <div class="content">
+                                                <span class="author">{{ beer.type }}</span>
+                                                <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
+                                                <p class="text">{{ beer.description }}</p>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
-                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
+                                <div class="back">
+                                    <div class="card backcard text-white bg-success mb-3" style="max-width: 20rem;">
+                                        <div class="card-header"><h4 class="card-title">{{ beer.name }}</h4></div>
+                                        <div class="card-body">
+                                            <div class="img-container d-flex justify-content-center">
+                                                <img src="{{ beer.photo }}" width="100%">
+                                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
                 {% endif %}
 
@@ -112,4 +158,7 @@
         </div>
 </div>
     </div>
+
+
 {% endblock %}
+
