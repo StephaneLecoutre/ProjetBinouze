@@ -35,13 +35,6 @@ h1 {
     top: 75%;
 }
 
-aside{
-    background-image: url("https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__480.jpg");
-    width: 15vw;
-    height: 100vh;
-    position: relative;
-}
-
 .card .menu-content {
     margin: 0;
     padding: 0;
@@ -71,7 +64,7 @@ aside{
 }
 .card .wrapper {
     background-color: #fff;
-    min-height: 350px;
+    min-height: 340px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
@@ -154,8 +147,8 @@ aside{
 }
 .example-2 .data {
     color: #fff;
-    -webkit-transform: translateY(calc(100px + 15em));
-    transform: translateY(calc(100px + 15em));
+    -webkit-transform: translateY(calc(80px + 0.8em));
+    transform: translateY(calc(80px + 0.8em));
 }
 .example-2 .title a {
     color: #fff;
@@ -163,15 +156,11 @@ aside{
 .example-2 .button {
     display: block;
     width: 100px;
-    margin: 2em auto 1em;
     text-align: center;
-    font-size: 12px;
+    font-size: 17px;
     color: #fff;
-    line-height: 1;
     position: absolute;
-    bottom: 3px;
-    right: 3px;
-    font-weight: 700;
+    bottom: 16px;
 }
 .example-2 .button::after {
     content: '\2192';
@@ -179,12 +168,23 @@ aside{
     position: absolute;
     right: 0;
     top: 50%;
+    font-size: 1.8em;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     transition: all 0.3s;
 }
 .example-2 .button:hover::after {
-    -webkit-transform: translate(5px, -50%);
-    transform: translate(5px, -50%);
+    -webkit-transform: translate(22px, -50%);
+    transform: translate(22px, -50%);
     opacity: 1;
 }
+
+.backcard{
+    background-image: url("https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__480.jpg");
+    height: 340px;
+}
+
+.flipcard{
+    cursor: pointer;
+}
+
