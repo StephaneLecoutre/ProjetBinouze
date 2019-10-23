@@ -1,43 +1,68 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Recipes index{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+{% endblock %}
 
 {% block body %}
-    <h1>Recipes index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Ingredients</th>
-                <th>Recipe</th>
-                <th>Photo</th>
-                <th>Comments</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for recipe in recipes %}
-            <tr>
-                <td>{{ recipe.id }}</td>
-                <td>{{ recipe.name }}</td>
-                <td>{{ recipe.ingredients|nl2br }}</td>
-                <td>{{ recipe.recipe|nl2br }}</td>
-                <td><img src="{{recipe.photo}}"> </td>
-                <td>{{ recipe.comments }}</td>
-                <td>
+ {% block javascripts %}
+    <script src="{{ asset('js/recipes.js') }}"></script>
+    {% endblock %}
+
+<nav class="top-right open">
+	<a class="disc l1">
+		<div>Infos</div>
+	</a>
+	<a class="disc l2">
+		<div>Quizz</div>
+	</a>
+	<a  href="{{ path('recipes_index') }}"class="disc l3">
+		<div>Recettes</div>
+	</a>
+    
+	<a href="{{ path('beers_index') }}" class="disc l4">
+		<div>bieres</div>
+	</a>
+	<a class="disc l5 toggle">
+		Menu
+	</a>
+</nav>
+
+    <div class="section1">
+        <h1 class="text-center pageTitle">Nos recettes à base de bière</h1>
+    </div>
+
+     <div class="row">
+     
+{% for recipe in recipes %}
+  
+        <div class="col-sm-3">
+        <div class="mt-5">
+        <div class="px-2">
+            <div class="card" style="width: 18rem;height:450px;">
+                <img src="{{recipe.photo}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.name }}</h5>
+                        <p class="card-text">{{ recipe.comments }}</p>
+                        <center><a href="{{ path('recipes_show', {'id': recipe.id}) }}" class="btn btn-primary">voir recettes</a></center>
+                    </div>
+            </div>
+        </div>
+        </div>
+        </div>
+            
+            <!--    <td>
                     <a href="{{ path('recipes_show', {'id': recipe.id}) }}">show</a>
                     <a href="{{ path('recipes_edit', {'id': recipe.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
+                </td>-->
+     
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
     <a href="{{ path('recipes_new') }}">Create new</a>
+
+   
 {% endblock %}

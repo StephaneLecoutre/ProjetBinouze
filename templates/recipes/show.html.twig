@@ -1,39 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Recipes{% endblock %}
-
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
+ {% endblock %}
 {% block body %}
     <h1>Recipes</h1>
-
+<div class="container recette">
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ recipe.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
+            {# <tr> #}
+                {# <th>Id</th> #}
+                {# <td>{{ recipe.id }}</td> #}
+            {# </tr> #}
+
+<tr>
+                <th>NOM</th>
                 <td>{{ recipe.name }}</td>
-            </tr>
-            <tr>
-                <th>Ingredients</th>
-                <td>{{ recipe.ingredients }}</td>
-            </tr>
-            <tr>
-                <th>Recipe</th>
-                <td>{{ recipe.recipe }}</td>
             </tr>
             <tr>
                 <th>Photo</th>
                 <td><img src="{{recipe.photo}}"> </td>
             </tr>
+            
+            <tr>
+                <th>Ingredients</th>
+                <td>{{ recipe.ingredients|nl2br }}</td>
+            </tr>
+            <tr>
+                <th>Recette</th>
+                <td>{{ recipe.recipe|nl2br }}</td>
+            </tr>
+            
             <tr>
                 <th>Comments</th>
                 <td>{{ recipe.comments }}</td>
             </tr>
         </tbody>
     </table>
-
+</div>
     <a href="{{ path('recipes_index') }}">back to list</a>
 
     <a href="{{ path('recipes_edit', {'id': recipe.id}) }}">edit</a>
