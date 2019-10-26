@@ -1,31 +1,29 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Accueil{% endblock %}
+{%  extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="icon" href="{{asset('images/binouze.png')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">    
 {% endblock %}
 
 {% block body %}
-<section class="margin jumbotron jumbotron-fluid text-center col-12 banner">
+<section class="text-center banner">
     <div class="container capsule">
-        <a href="#"><img src="{{asset('images/nosBieres.png')}}"></a>
-        <a href="#"><img src="{{asset('images/recettes.png')}}"></a>
-        <a href="#"><img src="{{asset('images/quizz.png')}}"></a>
-        <a href="#"><img src="{{asset('images/infos.png')}}"></a>       
+        
+        <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/nosBieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}" onclick="beep()"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quizz.png')}}" class="img-fluid"></a>
+        <a href="#" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>    
+  
     </div>
 
     <div class="title">
-        <h1>B<img class="bottle" src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
+        <h1>B<img class="bottle img-fluid" src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
     </div>
     
-    <video id="video" autoplay="true" loop muted width="100%"class="col-12">
+    <video id="video" autoplay="true" loop muted width="100%"class="embed-responsive col-12">
         <source src="{{asset('images/beer.mp4')}}"></source>        
     </video>
     
     <audio autoplay="true">
        <source src="{{asset('images/1391.mp3')}}" type"audio/mpeg"></source>
-       <source src="{{asset('images/1391.ogg')}}" type"audio/ogg"></source>
     </audio>
 
 </section>
@@ -34,4 +32,11 @@
 {% endblock %}
 
 {% block javascripts %}
+<script>
+    function beep() {
+        var beep = new Audio();
+        beep.src ="/public/images/1390.mp3";
+        beep.play();
+    }
+</script>
 {% endblock %}
