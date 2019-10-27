@@ -25,6 +25,7 @@ body {
 
 #quiz-results,.question {
     font-size:1.25em;
+    text-align: center;
 }
 
 .quiz-container {
@@ -40,14 +41,17 @@ body {
 .answers {
     list-style:none;
     padding:0;
+    text-align: center;
 }
 
 .answers a {
     display:block;
     padding:.5em 1em;
     margin-bottom:.5em;
-    background:#fff;
+    background: gray;
     border-radius:10px;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 .answers a.correct {
