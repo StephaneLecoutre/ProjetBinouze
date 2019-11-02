@@ -1,22 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Beers index{% endblock %}
+{% block title %}Binouze Lovers{% endblock %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/beers.css') }}">
+
+    <!------------------------------ slider logo ----------------------------------------->
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
 {% endblock %}
 
 {% block body %}
 
     {% block javascripts %}
-        <script src= "https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+
+        <!-- logos slider -->
+        <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js') }}"></script>
+        <script src="{{ asset('js/slick.js') }}"></script>
+
+        <!--CDN pour le plugin flip-->
         <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
 
+        <!--script permettant de faire tourner les cartes au click-->
         <script>
             $(".flipcard").flip({
+                <!--rotation sur l'axe y-->
                 axis: 'y',
+                <!--déclencheur au clic-->
                 trigger: 'click'
             });
+
+
         </script>
     {% endblock %}
 
@@ -24,80 +37,97 @@
         <h1 class="text-center pageTitle">Nos bières régionales primées</h1>
     </div>
 
-    <div class="jumbotron">
-        <div class="row">
-                <div class="container col-3">
-                    <h3>Recherchez votre bière</h3>
-                    {{ form_start(form) }}
-                    <div class="form-row">
-                        <div class="col">
-                            {{ form_row(form.name) }}
-                        </div>
-                        <div class="col">
-                            {{ form_row(form.type) }}
-                        </div>
+    <!-- logos slider-->
+    <div class="container-fluid mb-5">
+        <section class="customer-logos slider">
+            <div class="slide"><img src="{{ asset('images/svg/beer.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer2.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer3.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer4.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer5.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer6.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer7.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer8.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer9.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer10.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer11.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer12.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/beer13.svg') }}" alt="Flamme des Friedens"></div>
+            <div class="slide"><img src="{{ asset('images/svg/sausage.svg') }}" alt="Flamme des Friedens"></div>
+        </section>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#info1">Cliquez pour rechercher votre bière</button>
+    <div id="info1" class="collapse">
+        <div class="row mt-4">
+            <div class="container jumbotron">
+                <h3>Recherchez votre bière</h3>
+                {{ form_start(form) }}
+                <div class="form-row">
+                    <div class="col-4">
+                        {{ form_row(form.name) }}
                     </div>
-                    <div class="form-row">
-                        <div class="col">
-                            {{ form_row(form.brewery) }}
-                        </div>
-                        <div class="col">
-                            {{ form_row(form.city) }}
-                        </div>
+                    <div class="col-2">
+                        {{ form_row(form.type) }}
                     </div>
-                    <div class="col">
-                        <button class="btn btn-info">Rechercher</button>
+                    <div class="col-3">
+                        {{ form_row(form.brewery) }}
                     </div>
-                    {{ form_end(form) }}
+                    <div class="col-2">
+                        {{ form_row(form.city) }}
+                    </div>
+                    <button class="btn btn-info">Rechercher</button>
                 </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 
+        <div class="col-8 pl-5">
+            <div class="row">
 
-                <div class="container col-9">
-                    <div class="row">
+                    {% for beer in beers %}
 
-            {% for beer in beers %}
+                    {% if beer.id is odd %}
 
-                {% if beer.id is odd %}
+                    <div class="col-4">
+                        <div class="example-2 card mt-5">
 
-                                <div class="col-4">
-                                        <div class="example-2 card mt-5">
-
-                                            <div class="flipcard">
-                                                <div class="front">
-                                                    <div class="wrapper background1">
-                                                        <div class="header">
-                                                            <div class="date">
-                                                                <span class="day">{{ beer.city|upper }}</span>
-                                                            </div>
-                                                            <ul class="menu-content">
-                                                                <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="data">
-                                                            <div class="content">
-                                                                <span class="author">{{ beer.type }}</span>
-                                                                <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
-                                                                <p class="text">{{ beer.description }}</p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="back">
-                                                    <div class="card backcard text-white bg-success mb-3" style="max-width: 20rem;">
-                                                        <div class="card-header"><h4 class="card-title">{{ beer.name }}</h4></div>
-                                                        <div class="card-body">
-                                                            <div class="img-container d-flex justify-content-center">
-                                                                <img src="{{ beer.photo }}" width="100%">
-                                                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
-                                                                </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                            <div class="flipcard">
+                                <div class="front">
+                                    <div class="wrapper background1">
+                                        <div class="header">
+                                            <div class="date">
+                                                <span class="day">{{ beer.city|upper }}</span>
                                             </div>
+                                            <ul class="menu-content">
+                                                <li><a href="#" class="fa fa-beer"><span>Tchin!</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="data">
+                                            <div class="content">
+                                                <span class="author">{{ beer.type }}</span>
+                                                <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
+                                                <p class="text">{{ beer.description }}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="back">
+                                    <div class="card backcard text-white bg-success mb-3" style="max-width: 20rem;">
+                                        <div class="card-header"><h4 class="card-title">{{ beer.name }}</h4></div>
+                                        <div class="card-body">
+                                            <div class="img-container d-flex justify-content-center">
+                                                <img src="{{ beer.photo }}" width="100%">
+                                                <a href="{{ path('beers_show', {'id': beer.id}) }}" class="button">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
                 {% else %}
@@ -118,12 +148,11 @@
                                         </div>
                                         <div class="data">
                                             <div class="content">
-                                                <span class="author">{{ beer.type }}</span>
-                                                <h1 class="title"><a href="#">{{ beer.name }}</a></h1>
-                                                <p class="text">{{ beer.description }}</p>
+                                                <span class="author" style="color: black">{{ beer.type }}</span>
+                                                <h1 class="title" style="color: black">{{ beer.name }}</h1>
+                                                <p class="text" style="color: black">{{ beer.description }}</p>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -142,23 +171,17 @@
                         </div>
                     </div>
 
-
                 {% endif %}
 
-            {% endfor %}
-
+                {% endfor %}
 
             </div>
 
-    <div class="pagination d-flex justify-content-center mt-5">
-        {{ knp_pagination_render(beers) }}
-    </div>
+                <div class="pagination d-flex justify-content-center mt-5">
+                    {{ knp_pagination_render(beers) }}
+                </div>
 
-    <a href="{{ path('beers_new') }}">Create new</a>
         </div>
-</div>
-    </div>
-
 
 {% endblock %}
 

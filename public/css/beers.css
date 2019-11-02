@@ -3,14 +3,12 @@
 }
 
 body {
-    background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c1c0c5), color-stop(100%, #ffffff));
-    background-image:-webkit-linear-gradient(#c1c0c5,#ffffff);
-    background-image:-moz-linear-gradient(#c1c0c5,#ffffff);
-    background-image:-o-linear-gradient(#c1c0c5,#ffffff);
-    background-image:linear-gradient(#c1c0c5,#ffffff);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100vh;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 72%, rgba(214,214,214,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 72%, rgba(214,214,214,1) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(228,228,228,1) 72%, rgba(214,214,214,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#d6d6d6",GradientType=1);
+    height: 220vh;
 }
 
 a {
@@ -111,7 +109,7 @@ h1 {
 }
 
 .background2{
-    background: url(https://cdn.pixabay.com/photo/2015/06/24/13/31/beer-820011__480.jpg) center/cover no-repeat;
+    background: url(https://cdn.pixabay.com/photo/2016/09/26/22/59/beer-1697302__480.jpg) center/cover no-repeat;
 }
 
 .example-2 .wrapper:hover .menu-content span {
@@ -160,7 +158,7 @@ h1 {
     font-size: 17px;
     color: #fff;
     position: absolute;
-    bottom: 16px;
+    bottom: 2px;
 }
 .example-2 .button::after {
     content: '\2192';
@@ -187,4 +185,45 @@ h1 {
 .flipcard{
     cursor: pointer;
 }
+
+#mySVG1, #mySVG2 {
+    position: absolute;
+    top: 118vh;
+    right: 10vw;
+    width: 250px;
+    height: 130px;
+}
+
+#mySVG3, #mySVG4 {
+    position: absolute;
+    top: 135vh;
+    right: 10vw;
+    width: 250px;
+    height: 130px;
+}
+
+#mySVG5 {
+    position: absolute;
+    top: 152vh;
+    right: 10vw;
+    width: 250px;
+    height: 130px;
+}
+
+#mySVG6 , #mySVG7 {
+    position: absolute;
+    top: 169vh;
+    right: 10vw;
+    width: 250px;
+    height: 130px;
+}
+
+#mySVG8 , #mySVG9 {
+    position: absolute;
+    top: 186vh;
+    right: 10vw;
+    width: 250px;
+    height: 130px;
+}
+
 
