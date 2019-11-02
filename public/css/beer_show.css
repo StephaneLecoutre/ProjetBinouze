@@ -1,0 +1,54 @@
+*{
+    color: white;
+
+}
+
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2017/07/09/23/01/bottle-2488519__480.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 2000px;
+}
+
+#mySVG {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    width: 450px;
+    height: 600px;
+}
+
+#mySVG2 {
+    position: fixed;
+    top: 10%;
+    right: 0%;
+    width: 450px;
+    height: 600px;
+}
+
+.jumbotron{
+    width: 30%;
+    position: absolute;
+    top: 10vh;
+    left: 45vw;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    font-size: 1.5em;
+}
+
+#bottom{
+    position: absolute;
+    right: 2vw;
+    bottom: 1vh;
+}
+
+a{
+    font-size: 1.7em;
+    color: black!important;
+    text-decoration: none!important;
+}

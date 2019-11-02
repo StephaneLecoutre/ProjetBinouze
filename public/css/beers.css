@@ -186,44 +186,4 @@ h1 {
     cursor: pointer;
 }
 
-#mySVG1, #mySVG2 {
-    position: absolute;
-    top: 118vh;
-    right: 10vw;
-    width: 250px;
-    height: 130px;
-}
-
-#mySVG3, #mySVG4 {
-    position: absolute;
-    top: 135vh;
-    right: 10vw;
-    width: 250px;
-    height: 130px;
-}
-
-#mySVG5 {
-    position: absolute;
-    top: 152vh;
-    right: 10vw;
-    width: 250px;
-    height: 130px;
-}
-
-#mySVG6 , #mySVG7 {
-    position: absolute;
-    top: 169vh;
-    right: 10vw;
-    width: 250px;
-    height: 130px;
-}
-
-#mySVG8 , #mySVG9 {
-    position: absolute;
-    top: 186vh;
-    right: 10vw;
-    width: 250px;
-    height: 130px;
-}
-
 
