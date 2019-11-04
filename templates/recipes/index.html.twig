@@ -3,7 +3,8 @@
 {% block title %}Recipes index{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">    
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">  
+    {# <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">     #}
 {% endblock %}
 
 {% block body %}
@@ -12,29 +13,22 @@
     <script src="{{ asset('js/recipes.js') }}"></script>
     {% endblock %}
 
-<nav class="top-right open">
-	<a class="disc l1">
-		<div>Infos</div>
-	</a>
-	<a class="disc l2">
-		<div>Quizz</div>
-	</a>
-	<a  href="{{ path('recipes_index') }}"class="disc l3">
-		<div>Recettes</div>
-	</a>
-    
-	<a href="{{ path('beers_index') }}" class="disc l4">
-		<div>Bières</div>
-	</a>
-	<a class="disc l5 toggle">
-		Menu
-	</a>
-</nav>
+<div class="capsule">
+        
+        <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}" onclick="beep()"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+  
+    </div>
 
     <div class="section1">
         <h1 class="text-center pageTitle">Nos recettes à base de bière</h1>
     </div>
-
+<center>
+    <img src="{{ asset('images/beer-svgrepo-com.svg')}}" id="js-arrow" style="height:50vh">
+    </center>
      <div class="row">
      
 {% for recipe in recipes %}
@@ -47,7 +41,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ recipe.name }}</h5>
                         <p class="card-text">{{ recipe.comments }}</p>
-                        <center><a href="{{ path('recipes_show', {'id': recipe.id}) }}" class="btn btn-primary">voir recettes</a></center>
+                        <center><a href="{{ path('recipes_show', {'id': recipe.id}) }}" class="btn btn-primary">voir recette</a></center>
                     </div>
             </div>
         </div>
