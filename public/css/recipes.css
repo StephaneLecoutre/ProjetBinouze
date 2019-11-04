@@ -52,3 +52,15 @@ h1 {
       position: absolute;
       bottom: 2px;
   }
+  /* Capsule */
+.capsule {
+    display: flex;
+    justify-content: space-evenly;
+    
+  }
+  
+  .capsule img {
+    width: 200px;
+    justify-content: space-evenly;
+  }
+  

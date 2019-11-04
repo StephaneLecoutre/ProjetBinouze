@@ -13,18 +13,21 @@
     <script src="{{ asset('js/recipes.js') }}"></script>
     {% endblock %}
 
-<div class="capsule">
+
+
+    <div class="section1">
+    <h1 class="text-center pageTitle">Nos recettes à base de bière</h1>
+    <div class="capsule">
         
         <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
         <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
         <a href="{{ path('recipes_index') }}" onclick="beep()"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
         <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
         <a href="{{ path('infos') }}" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
-  
+        
     </div>
-
-    <div class="section1">
-        <h1 class="text-center pageTitle">Nos recettes à base de bière</h1>
+   
+        
     </div>
 <center>
     <img src="{{ asset('images/beer-svgrepo-com.svg')}}" id="js-arrow" style="height:50vh">

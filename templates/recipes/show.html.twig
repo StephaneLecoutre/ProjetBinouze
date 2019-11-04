@@ -11,6 +11,8 @@
 {% endblock %}
 {% block body %}
 
+<div class="section1">
+<h1 class="text-center pageTitle">Recettes</h1>
 <div class="capsule">
         
         <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
@@ -19,10 +21,13 @@
         <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
         <a href="{{ path('infos') }}" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
   
-    </div><center>
+    </div>
+    </div>
+    <center>
+    
     <img src="{{ asset('images/beer-svgrepo-com.svg')}}" id="js-arrow" style="height:50vh">
     
-    <h1>Recipes</h1>
+    
     </center>
 <div class="container recette">
     <table class="table">
