@@ -1,11 +1,13 @@
 {%  extends 'base.html.twig' %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">    
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">  
+    
 {% endblock %}
 
 {% block body %}
-<section class="text-center banner">
-    <div class="container capsule">
+
+<section class="margin jumbotron banner jumbotron-fluid text-center">
+    <div class="capsule">
         
         <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
         <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
@@ -16,16 +18,16 @@
     </div>
 
     <div class="title">
-        <h1>B<img class="bottle img-fluid" src="{{'images/bouteille2.png'}}"width="150px">NOUZE LOVERS</h1>
+        <h1>B<img class="bottle img-fluid" src="{{'images/bouteille2.png'}}">NOUZE LOVERS</h1>
     </div>
-    
-    <video id="video" autoplay="true" loop muted width="100%"class="embed-responsive col-12">
-        <source src="{{asset('images/beer.mp4')}}"></source>        
-    </video>
-    
-    <audio autoplay="true">
-       <source src="{{asset('images/1391.mp3')}}" type"audio/mpeg"></source>
-    </audio>
+
+        <video id="video" autoplay="true" loop muted>
+            <source src="{{asset('images/beer.mp4')}}"></source>  
+        </video> 
+
+        <audio autoplay="true">
+            <source src="{{asset('images/1391.mp3')}}" type"audio/mpeg"></source>
+        </audio>
 
 </section>
 
@@ -33,11 +35,5 @@
 {% endblock %}
 
 {% block javascripts %}
-<script>
-    function beep() {
-        var beep = new Audio();
-        beep.src ="/public/images/1390.mp3";
-        beep.play();
-    }
-</script>
+
 {% endblock %}

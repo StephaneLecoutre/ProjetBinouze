@@ -11,7 +11,7 @@ body{
   text-align: center;
   color: black;
   font-family: 'Indie Flower', cursive;
-  margin-top: 150px;
+  margin-top: 80px;
   font-size: 10vw;
 }
 
@@ -21,13 +21,14 @@ body{
   bottom: 0;
   z-index: -1;
   min-height: auto;
+  width: 100%;
 }
 
 .bottle {
   margin-left: -45px;
   margin-right: -45px;
-  margin-bottom: 50px;
-  height: auto;
+  margin-bottom: -20px;
+  width: 150px;
 }
 
 
@@ -66,21 +67,9 @@ body{
 
 /* Responsive */
 
-@media screen and (max-width: 1024px)
+/* @media screen and (max-width: 940px)
 {
- .banner 
- {
-  background-image: url('../images/responsive1.PNG') no-repeat center fixed;
-
- }
-
-#video 
-{
-  display: none;
-}
-
-.pageFooter
-{
-  margin-top: -45px;
-}
-}
+  .capsule {
+    display: none;
+  }
+} */

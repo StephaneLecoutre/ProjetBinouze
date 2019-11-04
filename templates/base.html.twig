@@ -5,7 +5,7 @@
         <title>{% block title %}Binouze Lovers{% endblock %}</title>
         {% block stylesheets %}
         <link rel="icon" href="{{asset('images/binouze.png')}}">
-        {% endblock %}
+        
 
             <!-- jQuery library -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,12 +25,12 @@
 
             <!--Thème bootstrap-->
             <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
-
+        {% endblock %}
     </head>
     <body>
         {% block body %}        
         {% endblock %}
-        {% block footer %}        
+        {# {% block footer %}        
         
         <footer class="pageFooter">
         
@@ -48,7 +48,7 @@
 
         </footer>
 
-       {% endblock %}
+       {% endblock %} #}
 
 
         {% block javascripts %}                   

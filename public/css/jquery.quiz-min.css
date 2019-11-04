@@ -1,10 +1,24 @@
+
 body {
     margin: 0;
     padding: 0;
-    width: 100wh;
+    width: 100vw;
     height: 100vh;
+    background-color: #e2e2e2;
 }
 
+/* Capsule */
+.capsule {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .capsule img {
+    width: 200px;
+    justify-content: space-evenly;
+  }
+
+  /* Bannière */
 .section1{
     background:url("https://netplus.agency/wp-content/themes/netplus/library/img/case-studies/iron-hill/beer-froth-large.png");
     background-position:top;
@@ -12,6 +26,9 @@ body {
     background-repeat:no-repeat;
     background-color:#C1C0C5;
     height: 500px;
+    width: 100% !important;
+    margin-top: -13%;
+    
 }
 
 .pageTitle{
@@ -21,11 +38,14 @@ body {
 
 #quiz-controls,#quiz-counter,#quiz-header,#quiz-results-screen,#quiz-start-screen {
     text-align:center;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 #quiz-results,.question {
     font-size:1.25em;
     text-align: center;
+
 }
 
 .quiz-container {
@@ -35,7 +55,10 @@ body {
 
 .quiz-container a {
     text-decoration:none;
-    color:#333;
+    color:white;
+}
+.quiz-container a:hover {
+    color: #F8C613;
 }
 
 .answers {
@@ -48,7 +71,7 @@ body {
     display:block;
     padding:.5em 1em;
     margin-bottom:.5em;
-    background: gray;
+    background: #333;
     border-radius:10px;
     margin-left: 35%;
     margin-right: 35%;
@@ -83,8 +106,8 @@ body {
 }
 
 .quiz-results-state #quiz-controls {
-    background:0 0
-    ;padding:0;
+    background:0 0;
+    padding:0;
 }
 
 .quiz-results-state #quiz-buttons a {
