@@ -19,6 +19,17 @@ h1 {
     font-weight: 300;
 }
 
+/* Capsule */
+.capsule {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.capsule img {
+    width: 200px;
+    justify-content: space-evenly;
+}
+
 .section1{
     background:url("https://netplus.agency/wp-content/themes/netplus/library/img/case-studies/iron-hill/beer-froth-large.png");
     background-position:top;
@@ -26,6 +37,7 @@ h1 {
     background-repeat:no-repeat;
     background-color:#C1C0C5;
     height: 500px;
+    margin-top: -13%;
 }
 
 .pageTitle{

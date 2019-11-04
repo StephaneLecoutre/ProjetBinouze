@@ -33,6 +33,17 @@
         </script>
     {% endblock %}
 
+    {# Nav Bar Capsule #}
+    <div class="container capsule">
+
+        <a href="{{ path('home') }}"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+
+    </div>
+
     <div class="section1">
         <h1 class="text-center pageTitle">Nos bières régionales primées</h1>
     </div>

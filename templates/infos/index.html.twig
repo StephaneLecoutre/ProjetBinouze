@@ -28,10 +28,17 @@
 
         </script>
 
-        <section id="start" class="section1">
-            <div id="intro" class="centered content">
-            </div>
+        {# Nav Bar Capsule #}
+        <div class="container capsule">
+            <a href="{{ path('home') }}"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+            <a href="{{ path('beers_index') }}"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+            <a href="{{ path('recipes_index') }}"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+            <a href="{{ path('quizz') }}"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+            <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+        </div>
 
+        <section id="start" class="section1">
+            <div id="intro" class="centered content"></div>
         </section>
 
         <section id="description" class="section2">

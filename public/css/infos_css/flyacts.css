@@ -52,13 +52,25 @@ a{text-decoration:none !important;background-color:transparent !important;color:
 /****************************************************************************************
 ********************************************SECTION 1*************************************
 ******************************************************************************************/
+/* Capsule */
+.capsule {
+    display: flex;
+    justify-content: space-evenly;
+}
 
-.section1{
-    background:url("https://netplus.agency/wp-content/themes/netplus/library/img/case-studies/iron-hill/beer-froth-large.png");
-    background-position:top;
+.capsule img {
+    width: 200px;
+    justify-content: space-evenly;
+}
+
+.section1 {
+    background: url("https://netplus.agency/wp-content/themes/netplus/library/img/case-studies/iron-hill/beer-froth-large.png");
+    background-position: top;
     background-size: cover;
-    background-repeat:no-repeat;
-    background-color:#C1C0C5}
+    background-repeat: no-repeat;
+    background-color: #C1C0C5;
+    margin-top: -13%;
+}
 
 /****************************************************************************************
 ********************************************SECTION 2*************************************
