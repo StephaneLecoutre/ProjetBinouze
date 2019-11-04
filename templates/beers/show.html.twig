@@ -115,10 +115,9 @@
             <li>{{ beer.description }}</li>
             <li><img src="{{ beer.photo }}" width="50%" class="mt-2"></li>
         </ul>
-        <p></p>
 
     </div>
-    <a href="#bottom" class="js-scrollTo btn-warning p-2">Cliquez & scrollez</a>
+    <a href="#bottom" class="js-scrollTo btn-warning p-2 mt-5">Cliquez & scrollez</a>
 
     <a id="bottom" class="btn-warning p-2" href="{{ path('beers_index') }}">Retour à la liste</a>
 
@@ -128,7 +127,7 @@
         });
 
         $( document ).ready(function() {
-            $("a").effect("bounce", "slow", "2000");
+            $("a").effect("bounce", "slow");
         });
 
         $(function() {

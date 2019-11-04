@@ -76,18 +76,22 @@
                 {{ form_start(form) }}
                 <div class="form-row">
                     <div class="col-4">
-                        {{ form_row(form.name) }}
+                        {{ form_label(form.name, 'Nom') }}
+                        {{ form_widget(form.name) }}
                     </div>
                     <div class="col-2">
-                        {{ form_row(form.type) }}
+                        {{ form_label(form.name, 'Type') }}
+                        {{ form_widget(form.type) }}
                     </div>
                     <div class="col-3">
-                        {{ form_row(form.brewery) }}
+                        {{ form_label(form.name, 'Brasserie') }}
+                        {{ form_widget(form.brewery) }}
                     </div>
                     <div class="col-2">
-                        {{ form_row(form.city) }}
+                        {{ form_label(form.name, 'Ville') }}
+                        {{ form_widget(form.city) }}
                     </div>
-                    <button class="btn btn-warning">Rechercher</button>
+                    <button class="btn btn-warning mt-3">Rechercher</button>
                 </div>
                 {{ form_end(form) }}
             </div>

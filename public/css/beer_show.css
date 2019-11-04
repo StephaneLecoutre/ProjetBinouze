@@ -44,11 +44,12 @@ li{
 #bottom{
     position: absolute;
     right: 2vw;
-    bottom: 1vh;
+    bottom: 0;
 }
 
 a{
     font-size: 1.7em;
     color: black!important;
     text-decoration: none!important;
+    border-radius: 8px;
 }
