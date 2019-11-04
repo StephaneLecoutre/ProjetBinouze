@@ -110,7 +110,7 @@
         <h1>{{ beer.name }}</h1>
         <ul>
             <li>{{ beer.type }}</li>
-            <li>{{ beer.city }}</li>
+            <li>{{ beer.city|upper }}</li>
             <li>{{ beer.brewery }}</li>
             <li>{{ beer.description }}</li>
             <li><img src="{{ beer.photo }}" width="50%" class="mt-2"></li>
@@ -118,9 +118,9 @@
         <p></p>
 
     </div>
-    <a href="#bottom" class="js-scrollTo btn-warning">Cliquez & scrollez</a>
+    <a href="#bottom" class="js-scrollTo btn-warning p-2">Cliquez & scrollez</a>
 
-    <a id="bottom" class="btn-warning" href="{{ path('beers_index') }}">Retour à la liste</a>
+    <a id="bottom" class="btn-warning p-2" href="{{ path('beers_index') }}">Retour à la liste</a>
 
     <script>
         $( document ).ready(function() {
