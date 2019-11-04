@@ -96,6 +96,10 @@ body {
     color:#fff;
 }
 
+#quiz {
+    height: 70%;
+}
+
 #quiz-buttons a,.quiz-container .quiz-button {
     display:inline-block;
 }
