@@ -56,7 +56,7 @@ h1 {
 .capsule {
     display: flex;
     justify-content: space-evenly;
-    
+    margin-top: -50px;
   }
   
   .capsule img {

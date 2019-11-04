@@ -19,11 +19,11 @@
     <h1 class="text-center pageTitle">Nos recettes à base de bière</h1>
     <div class="capsule">
         
-        <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
-        <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
-        <a href="{{ path('recipes_index') }}" onclick="beep()"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
-        <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
-        <a href="{{ path('infos') }}" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+        <a href="{{ path('home') }}" ><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}" ><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}" ><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}" ><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
         
     </div>
    
@@ -58,8 +58,8 @@
      
         {% endfor %}
     </div>
-
-    <a href="{{ path('recipes_new') }}">Create new</a>
-
+<center>
+    {# <a href="{{ path('recipes_new') }}">Create new</a> #}
+</center>
    
 {% endblock %}

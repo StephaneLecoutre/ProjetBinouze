@@ -15,11 +15,11 @@
 <h1 class="text-center pageTitle">Recettes</h1>
 <div class="capsule">
         
-        <a href="#" onclick="beep()"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
-        <a href="{{ path('beers_index') }}" onclick="beep()"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
-        <a href="{{ path('recipes_index') }}" onclick="beep()"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
-        <a href="{{ path('quizz') }}" onclick="beep()"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
-        <a href="{{ path('infos') }}" onclick="beep()"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+        <a href="{{ path('home') }}"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}" ><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}" ><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}" ><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}" ><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
   
     </div>
     </div>
@@ -56,16 +56,17 @@
             </tr>
             
             <tr>
-                <th>Comments</th>
+                <th>Commentaires</th>
                 <td>{{ recipe.comments }}</td>
             </tr>
         </tbody>
     </table>
 </div>
-    <a href="{{ path('recipes_index') }}">back to list</a>
+<center>
+    <a href="{{ path('recipes_index') }}">Retour à la liste des recettes</a><br>
 
-    <a href="{{ path('recipes_edit', {'id': recipe.id}) }}">edit</a>
+    {# <a href="{{ path('recipes_edit', {'id': recipe.id}) }}">edit</a> #}
 
-    {{ include('recipes/_delete_form.html.twig') }}
-
+    {# {{ include('recipes/_delete_form.html.twig') }} #}
+</center>
 {% endblock %}
