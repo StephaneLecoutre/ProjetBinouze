@@ -26,7 +26,7 @@ body {
     background-repeat:no-repeat;
     background-color:#C1C0C5;
     height: 500px;
-    width: 100% !important;
+    width: 100%;
     margin-top: -13%;
     
 }
@@ -49,7 +49,8 @@ body {
 }
 
 .quiz-container {
-    padding:1em;max-width:100%;
+    padding:1em;
+    max-width:100%;
     margin:1em auto;
 }
 
@@ -97,7 +98,7 @@ body {
 }
 
 #quiz {
-    height: 70%;
+    height: 60vh;
 }
 
 #quiz-buttons a,.quiz-container .quiz-button {
