@@ -73,3 +73,22 @@ body{
     display: none;
   }
 } */
+.footer {
+  background-color:black;
+  color:white;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding: 15px 0;
+  width: 100%;
+  height: auto;
+}
+.ref{color:white;}
+@media screen and (max-width:940px){
+  p{font-size:10px;}
+  .ref{ font-size:10px;}
+  .foot{ height:5vh;}
+  .car-img-top{height:50%;}
+}
