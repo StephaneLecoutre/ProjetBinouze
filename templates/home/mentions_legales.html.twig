@@ -1,7 +1,25 @@
 {% extends 'base.html.twig'%}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">  
+    {# <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">     #}
+{% endblock %}
 {% block title' Mentions légales'%}
 {% block body %}
-<h2>Informations légales</h2>
+ <div class="section1">
+    <h1 class="text-center pageTitle">Informations légales</h1>
+    <div class="capsule">
+        
+        <a href="{{ path('home') }}" ><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}" ><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}" ><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}" ><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+        
+    </div>   
+    </div>
+
+<br><br>
 <h3>1. Présentation du site.</h3>
 <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
 <p><strong>Propriétaire</strong> : La Team Binouze –  – 13 rue de la soif BIBINELAND<br />
@@ -22,7 +40,7 @@ Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank
 <h3>3. Description des services fournis.</h3>
 <p>Le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> a pour objet de fournir une information concernant l’ensemble des activités de la société.</p>
 <p>La Team Binouze s’efforce de fournir sur le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
-<p>Tous les informations indiquées sur le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p>
+<p>Tous les informations indiquées sur le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site <a href="http://www.BinouzeLovers.com/">www.BinouzeLovers.com</a> ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.</p><br>
 <h3>4. Limitations contractuelles sur les données techniques.</h3>
 <p>Le site utilise la technologie JavaScript.</p>
 <p>Le site Internet ne pourra être tenu responsable de dommages matériels liés à l’utilisation du site. De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour</p>
