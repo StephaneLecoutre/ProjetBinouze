@@ -50,19 +50,24 @@ h1 {
     padding: 0;
     list-style-type: none;
 }
+
 .card .menu-content::before, .card .menu-content::after {
     content: '';
     display: table;
 }
+
 .card .menu-content::after {
     clear: both;
 }
+
 .card .menu-content li {
     display: inline-block;
 }
+
 .card .menu-content a {
     color: #fff;
 }
+
 .card .menu-content span {
     position: absolute;
     left: 50%;
@@ -72,6 +77,7 @@ h1 {
     -webkit-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
 }
+
 .card .wrapper {
     background-color: #fff;
     min-height: 40vh;
@@ -79,10 +85,12 @@ h1 {
     overflow: hidden;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
 }
+
 .card .wrapper:hover .data {
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
+
 .card .data {
     position: absolute;
     bottom: 0;
@@ -93,24 +101,29 @@ h1 {
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s;
 }
+
 .card .data .content {
     padding: 1em;
     position: relative;
     z-index: 1;
 }
+
 .card .author {
     font-size: 12px;
 }
 .card .title {
     margin-top: 10px;
 }
+
 .card .text {
     height: 70px;
     margin: 0;
 }
+
 .card input[type='checkbox'] {
     display: none;
 }
+
 .card input[type='checkbox']:checked + .menu-content {
     -webkit-transform: translateY(-60px);
     transform: translateY(-60px);
@@ -191,7 +204,7 @@ h1 {
 
 .backcard{
     background-image: url("https://cdn.pixabay.com/photo/2016/07/30/20/52/vintage-1557993__480.jpg");
-    height: 340px;
+    height: 40vh;
 }
 
 .flipcard{
