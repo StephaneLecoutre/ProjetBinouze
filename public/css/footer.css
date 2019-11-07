@@ -12,9 +12,13 @@
   }
   .ref{color:white;}
 
-  @media screen and (max-width:940px){
+  .foot {
+    height: 15vh;
+  }
+
+  /* @media screen and (max-width:940px){
     .foireux{font-size:10px;}
     .ref{ font-size:10px;}
     .foot{ height:5vh;}
     .car-img-top{height:50%;}
-  }
+  } */

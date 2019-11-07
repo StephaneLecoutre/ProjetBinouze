@@ -34,11 +34,11 @@
 
         {% block footer %}
             <div class="footer"> 
-            <img class="foot" src="{{ asset('images/beer3footer.svg')}}"  style="height:15vh">
-            <p class="foireux">L'abus d'alcool est dangeureux pour la santé<br>A consommer avec modération</p><br>
-            <a class="ref" href="{{ path('mentions_legales') }}">Mentions légales</a><br>
-            <a class="ref" href="#">Nous contacter</a><br>
-            <img class="foot" src="{{ asset('images/beer4footer.svg')}}" style="height:15vh">
+                <img src="{{ asset('images/beer3footer.svg')}}" class="foot img-fluid">
+                <p class="foireux">L'abus d'alcool est dangeureux pour la santé<br>A consommer avec modération</p><br>
+                <a class="ref" href="{{ path('mentions_legales') }}">Mentions légales</a><br>
+                <a class="ref" href="{{ path('contact') }}">Nous contacter</a><br>
+                <img src="{{ asset('images/beer4footer.svg')}}" class="foot img-fluid">
             </div>
         {% endblock %}
 

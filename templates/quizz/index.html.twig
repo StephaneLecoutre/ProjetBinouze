@@ -3,7 +3,14 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.quiz-min.css')}}" />
-    <link rel="icon" href="{{asset('images/favicon.ico')}}">
+                <!--Fontawesome-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <!-- Bootstrap-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+      <link rel="icon" href="{{asset('images/favicon.ico')}}">
 {% endblock %}
 
 {% block javascripts %}
@@ -13,11 +20,8 @@
 
 {% block body %}
 
-
-<div class="container">
-
     {# Nav Bar Capsule #}
-    <div class="container capsule">
+    <div class="capsule">
         
         <a href="{{ path('home') }}"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
         <a href="{{ path('beers_index') }}"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
@@ -26,18 +30,21 @@
         <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>    
   
     </div>
+    <audio>
+      <source src="{{ asset('images/1390.mp3') }}" type="audio/mpeg">
+    </audio>
+
     {# Bannière #}
     <div class="section1"></div>
 
   <div id="quiz">
-      <div id="quiz-header">
-        <h1>Teste tes connaissances sur la binouze !!</h1>
-      </div>
+        <h1 class="text-center">Teste <br>tes connaissances<br> sur <br>la binouze !!</h1>
+      
       <div id="quiz-start-screen">
         <p><a href="#" id="quiz-start-btn" class="quiz-button">Commencez</a></p>
       </div>
   </div>
-</div>
+
 
 <script>
 //Démarrrage du quiz
@@ -112,6 +119,18 @@
     ]
   });
 </script>
+<script>
+  $(document).ready(function(){
+    $('#son').click(function(){
+      var song = $('audio');
+      if(song.paused){
+        song.play()
+      }else {
+        song.pause()
+      }
+    })
+  })
+</script>
 {# <script type="text/javascript">
 
    var _gaq = _gaq || [];
@@ -128,7 +147,7 @@
   })();
 
 </script> #}
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 {% endblock %}
 

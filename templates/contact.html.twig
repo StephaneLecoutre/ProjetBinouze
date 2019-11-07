@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+    {# Nav Bar Capsule #}
+    <div class="capsule">
+
+        <a href="{{ path('home') }}"><img src="{{asset('images/accueil.png')}}" class="img-fluid"></a>
+        <a href="{{ path('beers_index') }}"><img src="{{asset('images/bieres.png')}}" class="img-fluid"></a>
+        <a href="{{ path('recipes_index') }}"><img src="{{asset('images/recettes.png')}}" class="img-fluid"></a>
+        <a href="{{ path('quizz') }}"><img src="{{asset('images/quiz.png')}}" class="img-fluid"></a>
+        <a href="{{ path('infos') }}"><img src="{{asset('images/infos.png')}}" class="img-fluid"></a>
+
+    </div>
+
+    <div class="section1">
+        <h1 class="text-center pageTitle">Contact</h1>
+    </div>
+    <div class="form">
+        
+            <form action="/ma-page-de-traitement" method="post">
+            <h2>Formulaire de contact</h2>
+            <div>
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="mail">e-mail :</label>
+                <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="msg">Message :</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Envoyer le message</button>
+            </div>
+            </form>
+        
+    </div>
+{% endblock %}

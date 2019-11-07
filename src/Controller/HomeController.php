@@ -32,5 +32,14 @@ public function mentions(): Response
     return $this->render('home/mentions_legales.html.twig');
 }
 
+/**
+ * @Route("contact", name="contact")
+ *@return Response
+ */
+public function contact(): Response
+{
+    return $this->render('contact.html.twig');
+}
+
 
 }
